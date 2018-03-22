@@ -76,10 +76,11 @@ def seek(x, H2, beta = 0.001, cutoff = 1e-4, maxIter = 100000, recordStep=100):
     if r > cutoff:
         print "Warning: Error greater than cutoff, did not converge."
     #Return vector, the clique it represents, and the error trace.
-    return y, np.fabs(np.sign(y)), errors
+    return y, np.sign(np.round(y, 4)), errors
 
 
-def solve(H2, beta=1e-3, cutoff=1e-4, maxIter=100000, recordStep=100):
+def solve(G, beta=1e-3, cutoff=1e-4, maxIter=100000, recordStep=100):
+    H2 = graphToH(G)
     x = r1(H2)
     return seek(x, H2, beta, cutoff, maxIter, recrodStep)
 
