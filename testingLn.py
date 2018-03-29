@@ -26,7 +26,7 @@ x = np.ones(125)
 #Returns -- exact floating point numbers; only the ones that are part of the clique; and an error trace.
 #Takes: initial guess; H matrix; norm to be used; renormalization for x; 
 #stepsize; error cutoff; maxIter; how often to print.
-y, c2, errors2 = seek(x, H2, 4, renormL2, 1e-2, 1e-5, 100000000000000, 1000)
+y, c2, errors2 = seek(x, H2, 3, renormL2, 1e-2, 1e-8, 100000000000000, 1000)
 
 
 #Gets the biggest k entries of y, under the condition that they form a clique.
