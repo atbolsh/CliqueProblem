@@ -9,6 +9,8 @@ b200_2 = dN + "brock200_2.clq"   #12
 b200_4 = dN + "brock200_4.clq"   #17
 h8_4   = dN + "hamming8-4.clq"   #16
 p15_3  = dN + "p_hat1500-3.clq"  #94
+p3_3   = dN + "p_hat300-3.clq"   #36
+p3_1   = dN + "p_hat300-1.clq"   #8
 
 N125_9 = 125
 N250_9 = 250
@@ -16,6 +18,8 @@ N200_2 = 200
 N200_4 = 200
 N8_4   = 256
 N15_3  = 1500
+N3_3   = 300
+N3_1   = 300
 
 def getGraph(s = c125_9, n = N125_9):
     f = open(s, 'r')

@@ -43,7 +43,16 @@ def extractClique(A, acc=4):
             r.append(i)
     return np.array(r)
 
+def extendByOne(c, G):
+    N = G.shape[0]
+    for i in range(N):
+        if i not in c:
+            if verifyClique(c + [i], G):
+                return c + [i]
+    print "Maximal!"
+    return c
 
+        
 
 
 
