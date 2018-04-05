@@ -1,12 +1,14 @@
 import numpy as np
 import math
 
-c125_9 = "C125.9.clq"       #34
-c250_9 = "C250.9.clq"       #44
-b200_2 = "brock200_2.clq"   #12
-b200_4 = "brock200_4.clq"   #17
-h8_4   = "hamming8-4.clq"   #16
-p15_3  = "p_hat1500-3.clq"  #94
+dN     = "DIMACS_all_ascii/"
+
+c125_9 = dN + "C125.9.clq"       #34
+c250_9 = dN + "C250.9.clq"       #44
+b200_2 = dN + "brock200_2.clq"   #12
+b200_4 = dN + "brock200_4.clq"   #17
+h8_4   = dN + "hamming8-4.clq"   #16
+p15_3  = dN + "p_hat1500-3.clq"  #94
 
 N125_9 = 125
 N250_9 = 250
