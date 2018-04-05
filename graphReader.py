@@ -1,10 +1,21 @@
 import numpy as np
 import math
 
-fname = "C125.9.clq"
-N = 125
+c125_9 = "C125.9.clq"       #34
+c250_9 = "C250.9.clq"       #44
+b200_2 = "brock200_2.clq"   #12
+b200_4 = "brock200_4.clq"   #17
+h8_4   = "hamming8-4.clq"   #16
+p15_3  = "p_hat1500-3.clq"  #94
 
-def getGraph(s = fname, n = N):
+N125_9 = 125
+N250_9 = 250
+N200_2 = 200
+N200_4 = 200
+N8_4   = 256
+N15_3  = 1500
+
+def getGraph(s = c125_9, n = N125_9):
     f = open(s, 'r')
     l = f.readlines()
     f.close()
