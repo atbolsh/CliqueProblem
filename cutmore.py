@@ -1,3 +1,7 @@
+"""
+Same as blocking, but more aggressive pruning.
+"""
+
 import math
 from copy import deepcopy
 
@@ -12,13 +16,13 @@ import matplotlib.pyplot as plt
 
 from NPLn import *
 
-def aboveCompetition(y, H2):
+def aboveCompetition(y, H2, n=2):
     """Prints a list of indeces of y which are guaranteed not to die out."""
     R = []
     #Sum of all rivals.
-    adv = np.matmul(np.ones(H2.shape) - H2, y)
+    adv = np.matmul(np.ones(H2.shape) - H2, y**(n-1))
     for i in range(len(y)):
-        if y[i] > adv[i]:
+        if y[i]**(n-1) > adv[i]:
             R.append(i)
     return R
 
@@ -63,7 +67,7 @@ def seek(x, H2, n=8, ren=renormL2, beta = 0.001, cutoff = 1e-4, maxIter = 100000
             errors.append(r)
         ### Here is the blocking:
         if recordStep != 0 and i %(10*recordStep) == 0:
-            w = aboveCompetition(y, H2)
+            w = aboveCompetition(y, H2, n)
             if len(w) > 0:
                R = R + w
                print R
